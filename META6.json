@@ -1,0 +1,23 @@
+{
+    "perl"        : "6.*",
+    "name"        : "Cable",
+    "version"     : "0.0.1",
+    "license"     : "MIT",
+    "description" : "An lightly Subject and Observer framework.",
+    "depends"     : [ ],
+    "test-depends": [ ],
+    "tags": [
+        "subject",
+        "observer"
+    ],
+    "provides" : {
+        "Cable" : "lib/Cable.pm6"
+    },
+	"auth" : "github:araraloren",
+    "authors" : "Loren",
+    "source-url"  : "https://github.com/perl6-song/cable.git",
+    "support" : {
+        "bugtracker" : "https://github.com/perl6-song/cable/issues",
+        "source" : "https://github.com/perl6-song/cable.git"
+    }
+}
