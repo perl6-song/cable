@@ -1,7 +1,7 @@
 
 = Torch
 
-An lightly Subject and Observer framework.
+A lightly Subject and Observer framework.
 
 == Description
 
