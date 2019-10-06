@@ -2,21 +2,21 @@
 unit class Cable is export;
 
 role Message {
-    method type(--> Str) { ... }
+    method type(--> Any:U) { ... }
 
     method id(--> Str) { ... }
 
-    method check(--> Bool) { ... }
+    method data() {}
 
-    method update($ret) { ... }
+    method process($ret) { ... }
 }
 
 role Observer {
     method id(--> Str) { ... }
 
-    method check(Message --> Bool) { ... }
+    method check(Message --> Bool) { True }
 
-    method update(Message) { ... }
+    method process(Message) { ... }
 }
 
 role Subject {
@@ -42,7 +42,9 @@ role Subject {
     method notify(Message $msg, :$once)  {
         for @!observer -> $ob {
             if $ob.check($msg) {
-                $msg.update($ob.update($msg));
+                $msg.process(
+                    $ob.process($msg)
+                );
                 last if $once;
             }
         }
